@@ -129,7 +129,7 @@ export default function Home() {
               </Button>
             </div>
           </div>
-          <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full border-2 border-gray-200 shadow-xl flex items-center justify-center bg-white">
+          <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full border-2 border-gray-200 shadow-xl flex items-center justify-center bg-white mt-8">
             <div className="w-full h-full rounded-full overflow-hidden flex items-center justify-center">
               <Image
                 src="/dark.png"
