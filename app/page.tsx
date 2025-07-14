@@ -132,7 +132,7 @@ export default function Home() {
           <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full border-2 border-gray-200 shadow-xl flex items-center justify-center bg-white">
             <div className="w-full h-full rounded-full overflow-hidden flex items-center justify-center">
               <Image
-                src="/placeholder.svg?height=320&width=320"
+                src="/dark.png"
                 alt="Haseeb Aslam"
                 width={320}
                 height={320}
