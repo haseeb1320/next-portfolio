@@ -22,8 +22,8 @@ A modern, animated portfolio website for Haseeb Aslam, Senior Software Engineer.
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/your-portfolio.git
-cd your-portfolio
+git clone https://github.com/haseeb1320/portfolio-v0.git
+cd portfolio-v0
 ```
 
 ### 2. Install dependencies
@@ -65,4 +65,4 @@ For questions or collaboration:
 
 ---
 
-© {new Date().getFullYear()} Haseeb Aslam. All rights reserved. 
+© 2024 Haseeb Aslam. All rights reserved. 
