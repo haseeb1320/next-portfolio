@@ -27,47 +27,6 @@ export default function Home() {
   const [email, setEmail] = useState('')
   const [subject, setSubject] = useState('')
 
-  useEffect(() => {
-    if (contactTab === 'booking') {
-      // Load Calendly widget script if not already present
-      if (!document.getElementById('calendly-widget-script')) {
-        const link = document.createElement('link')
-        link.href = 'https://assets.calendly.com/assets/external/widget.css'
-        link.rel = 'stylesheet'
-        link.id = 'calendly-widget-style'
-        document.head.appendChild(link)
-
-        const script = document.createElement('script')
-        script.src = 'https://assets.calendly.com/assets/external/widget.js'
-        script.async = true
-        script.id = 'calendly-widget-script'
-        document.body.appendChild(script)
-
-        script.onload = () => {
-          if (window.Calendly) {
-            window.Calendly.initBadgeWidget({
-              url: 'https://calendly.com/haseebaslam1320',
-              text: 'Schedule time with me',
-              color: '#0069ff',
-              textColor: '#ffffff',
-              branding: true
-            })
-          }
-        }
-      } else if (window.Calendly) {
-        window.Calendly.initBadgeWidget({
-          url: 'https://calendly.com/haseebaslam1320',
-          text: 'Schedule time with me',
-          color: '#0069ff',
-          textColor: '#ffffff',
-          branding: true
-        })
-      }
-    }
-    // Optionally, remove the badge when switching back to form
-    // (Calendly does not provide a destroy method, so you may need to reload page to remove it)
-  }, [contactTab])
-
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (!formRef.current) return
@@ -417,7 +376,7 @@ export default function Home() {
           >
             <div className="h-48 bg-muted relative">
               <Image
-                src="/placeholder.svg?height=400&width=600"
+                src="/real-estate.png"
                 alt="Decentralized Real Estate Marketplace"
                 fill
                 className="object-cover"
@@ -443,13 +402,8 @@ export default function Home() {
                 <li>Implemented Apache Kafka for syncing on-chain events with off-chain analytics dashboards.</li>
               </ul>
               <div className="flex gap-3 pt-2">
-                <Button asChild size="sm">
-                  <a href="https://realestate-dapp-demo.vercel.app" target="_blank" rel="noopener noreferrer">
-                    Live Demo <ExternalLink className="ml-1 h-3 w-3" />
-                  </a>
-                </Button>
                 <Button variant="outline" size="sm" asChild>
-                  <a href="https://github.com/haseebaslam/realestate-dapp" target="_blank" rel="noopener noreferrer">
+                  <a href="https://github.com/haseeb1320/real-estate" target="_blank" rel="noopener noreferrer">
                     View Code <ExternalLink className="ml-1 h-3 w-3" />
                   </a>
                 </Button>
@@ -465,7 +419,7 @@ export default function Home() {
           >
             <div className="h-48 bg-muted relative">
               <Image
-                src="/placeholder.svg?height=400&width=600"
+                src="/trading.png"
                 alt="AI-Driven Quantitative Trading Platform"
                 fill
                 className="object-cover"
@@ -503,13 +457,8 @@ export default function Home() {
                 <li>Visualized insights with D3.js and Grafana; CI/CD pipeline implemented with Jenkins and Docker.</li>
               </ul>
               <div className="flex gap-3 pt-2">
-                <Button asChild size="sm">
-                  <a href="https://quant-trading-platform.vercel.app" target="_blank" rel="noopener noreferrer">
-                    Live Demo <ExternalLink className="ml-1 h-3 w-3" />
-                  </a>
-                </Button>
                 <Button variant="outline" size="sm" asChild>
-                  <a href="https://github.com/haseebaslam/quant-trading" target="_blank" rel="noopener noreferrer">
+                  <a href="https://github.com/haseeb1320/AI-Trading_platform" target="_blank" rel="noopener noreferrer">
                     View Code <ExternalLink className="ml-1 h-3 w-3" />
                   </a>
                 </Button>
