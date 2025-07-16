@@ -57,6 +57,7 @@ export default function Home() {
   // Add hooks for more sections
   const [skillsRef, skillsInView] = useInView({ triggerOnce: true, threshold: 0.2 })
   const [educationRef, educationInView] = useInView({ triggerOnce: true, threshold: 0.2 })
+  const [certRef, certInView] = useInView({ triggerOnce: true, threshold: 0.2 })
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -368,7 +369,11 @@ export default function Home() {
             hidden: {},
           }}
         >
-          <motion.div className="bg-card rounded-lg shadow-md overflow-hidden border"
+          <motion.div
+            whileHover={{ scale: 1.04, boxShadow: '0 8px 32px rgba(80,80,180,0.12)' }}
+            whileFocus={{ scale: 1.04, boxShadow: '0 8px 32px rgba(80,80,180,0.16)' }}
+            tabIndex={0}
+            className="bg-card rounded-lg shadow-md overflow-hidden border outline-none focus-visible:ring-2 focus-visible:ring-primary transition-all duration-200"
             variants={{
               hidden: { opacity: 0, y: 40, scale: 0.96 },
               visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.6, ease: 'easeOut' } },
@@ -411,7 +416,11 @@ export default function Home() {
             </div>
           </motion.div>
 
-          <motion.div className="bg-card rounded-lg shadow-md overflow-hidden border"
+          <motion.div
+            whileHover={{ scale: 1.04, boxShadow: '0 8px 32px rgba(80,80,180,0.12)' }}
+            whileFocus={{ scale: 1.04, boxShadow: '0 8px 32px rgba(80,80,180,0.16)' }}
+            tabIndex={0}
+            className="bg-card rounded-lg shadow-md overflow-hidden border outline-none focus-visible:ring-2 focus-visible:ring-primary transition-all duration-200"
             variants={{
               hidden: { opacity: 0, y: 40, scale: 0.96 },
               visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.6, ease: 'easeOut' } },
@@ -523,10 +532,22 @@ export default function Home() {
       </motion.section>
 
       {/* Certifications Section */}
-      <section id="certifications" className="py-16 container">
+      <motion.section
+        id="certifications"
+        ref={certRef}
+        className="py-16 container"
+        initial={{ opacity: 0, y: 60 }}
+        animate={certInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.7, ease: 'anticipate', delay: 0.22 }}
+      >
         <h2 className="text-3xl font-bold mb-8">Certifications</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-card rounded-lg p-6 border flex items-center gap-4">
+          <motion.div
+            whileHover={{ scale: 1.04, boxShadow: '0 8px 32px rgba(80,80,180,0.12)' }}
+            whileFocus={{ scale: 1.04, boxShadow: '0 8px 32px rgba(80,80,180,0.16)' }}
+            tabIndex={0}
+            className="bg-card rounded-lg p-6 border flex items-center gap-4 outline-none focus-visible:ring-2 focus-visible:ring-primary transition-all duration-200"
+          >
             <div className="bg-primary/10 p-3 rounded-full">
               <div className="w-10 h-10 flex items-center justify-center">
                 <svg
@@ -552,9 +573,14 @@ export default function Home() {
               </div>
             </Link>
 
-          </div>
+          </motion.div>
 
-          <div className="bg-card rounded-lg p-6 border flex items-center gap-4">
+          <motion.div
+            whileHover={{ scale: 1.04, boxShadow: '0 8px 32px rgba(80,80,180,0.12)' }}
+            whileFocus={{ scale: 1.04, boxShadow: '0 8px 32px rgba(80,80,180,0.16)' }}
+            tabIndex={0}
+            className="bg-card rounded-lg p-6 border flex items-center gap-4 outline-none focus-visible:ring-2 focus-visible:ring-primary transition-all duration-200"
+          >
             <div className="bg-primary/10 p-3 rounded-full">
               <div className="w-10 h-10 flex items-center justify-center">
                 <svg
@@ -577,9 +603,9 @@ export default function Home() {
               <h3 className="text-lg font-semibold">Meta Full Stack Developer Certificate</h3>
               <p className="text-muted-foreground">Coursera/Meta, January 2019</p>
             </div>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Contact Section */}
       <section id="contact" className="py-16 bg-muted/50">
@@ -753,7 +779,7 @@ export default function Home() {
                   </form>
                   <div className="border-t border-muted-foreground/20 w-full my-4"></div>
                   <div className="text-sm text-muted-foreground">Or reach out directly via
-                    <a href="https://t.me/yourtelegram" target="_blank" rel="noopener noreferrer" className="ml-2 inline-flex items-center px-3 py-1 rounded-full border bg-background font-medium hover:bg-muted transition">
+                    <a href="https://t.me/hassebA1230" target="_blank" rel="noopener noreferrer" className="ml-2 inline-flex items-center px-3 py-1 rounded-full border bg-background font-medium hover:bg-muted transition">
                       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-1"><path d="M22 2 11 13"/><path d="m22 2-7 20-4-9-9-4Z"/></svg>
                       Telegram
                     </a>
